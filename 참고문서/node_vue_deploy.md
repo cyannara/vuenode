@@ -440,8 +440,6 @@ sudo vi ~/.ssh/authorized_keys
 # id_rsa.pub(공개키) 내용을 추가로 붙여넣기  o -> shift+insert -> :wq
 ```
 
-<<<<<<< HEAD
-
 ##### GitHub에 Secrets 등록
 
 GitHub → Settings → Secrets → Actions
@@ -554,7 +552,3 @@ export HISTTIMEFORMAT="%F %T "
       pm2 restart app || pm2 start backend/app.js --name "app"
       pm2 save
 ```
-
-=======
-
-> > > > > > > a5ef25a6f9d55eedb0fafa2f599ed8c51c0d3ad4
