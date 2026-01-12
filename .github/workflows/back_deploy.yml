@@ -19,8 +19,9 @@ jobs:
           username: ${{ secrets.USER }}
           key: ${{ secrets.KEY }}
           source: "backapp/*"
-          target: ${{ secrets.BACK_PATH }}
+          target: /home/ubuntu/app/backapp
           rm: true
+          strip_components: 1
 
       - name: Restart Server
         uses: appleboy/ssh-action@v1.0.3
@@ -31,6 +32,6 @@ jobs:
           script: |
             export NVM_DIR="$HOME/.nvm"
             [ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh"
-            cd ${{ secrets.BACK_PATH }}
+            cd /home/ubuntu/app/backapp
             npm install  --omit=dev
             pm2 reload app || pm2 start app.js --name app
